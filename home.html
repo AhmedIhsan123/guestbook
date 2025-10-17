@@ -19,47 +19,63 @@
 				<!-- Basic information fieldset -->
 				<fieldset id="basic-info">
 					<!-- First name -->
-					<label for="fname">First name</label>
-					<input type="text" id="fname" name="fname" required />
+					<div>
+						<label for="fname">First name</label>
+						<input type="text" id="fname" name="fname" required />
+					</div>
 
 					<!-- Last name -->
-					<label for="lname">Last name</label>
-					<input type="text" id="lname" name="lname" required />
+					<div>
+						<label for="lname">Last name</label>
+						<input type="text" id="lname" name="lname" required />
+					</div>
 
 					<!-- Job Title -->
-					<label for="job-title">Job Title</label>
-					<input type="text" id="job-title" name="job-title" required />
+					<div>
+						<label for="job-title">Job Title</label>
+						<input type="text" id="job-title" name="job-title" required />
+					</div>
 
 					<!-- Company -->
-					<label for="company">Company</label>
-					<input type="text" id="company" name="company" required />
+					<div>
+						<label for="company">Company</label>
+						<input type="text" id="company" name="company" required />
+					</div>
 
 					<!-- Linkedin URL -->
-					<label for="linkedin">LinkedIn URL</label>
-					<input type="text" id="linkedin" name="linkedin" />
+					<div>
+						<label for="linkedin">LinkedIn URL</label>
+						<input type="text" id="linkedin" name="linkedin" />
+					</div>
 
 					<!-- Email Address -->
-					<label for="email">Email Address</label>
-					<input type="email" id="email" name="email" required />
+					<div>
+						<label for="email">Email Address</label>
+						<input type="email" id="email" name="email" required />
+					</div>
 				</fieldset>
 
 				<!-- Meeting info -->
 				<fieldset id="meeting-info">
 					<!-- Meet -->
-					<label for="meet">How did we meet?</label>
-					<select name="meet" id="meet">
-						<option value="">Please select</option>
-						<option value="online">Online</option>
-						<option value="in-person">In-Person</option>
-						<option value="other">Other</option>
-					</select>
+					<div>
+						<label for="meet">How did we meet?</label>
+						<select name="meet" id="meet">
+							<option value="">Please select</option>
+							<option value="online">Online</option>
+							<option value="in-person">In-Person</option>
+							<option value="other">Other</option>
+						</select>
+					</div>
 
 					<!-- Other -->
-					<label for="other">Other (please specify)</label>
-					<input type="text" id="other" />
+					<div>
+						<label for="other">Other (please specify)</label>
+						<input type="text" id="other" />
+					</div>
 				</fieldset>
 
-				<!-- Last area -->
+				<!-- Message area -->
 				<fieldset id="submit-info">
 					<!-- Message box -->
 					<label for="message">Message</label>
@@ -70,17 +86,31 @@
 					></textarea>
 
 					<!-- Add to mailing -->
-					<input type="checkbox" id="mail-list" name="mail-list" />
-					<label for="mail-list">Please add me to your mailing list!</label>
+					<div>
+						<div>
+							<input type="checkbox" id="mail-list" name="mail-list" />
+							<label for="mail-list">Please add me to your mailing list!</label>
+						</div>
 
-					<!-- Email format -->
-					<label for="mail-format">Choose an email format: </label>
-					<label
-						><input type="radio" name="mail-format" value="html" />HTML</label
-					>
-					<label
-						><input type="radio" name="mail-format" value="text" />Text</label
-					>
+						<!-- Email format -->
+						<div>
+							<label for="mail-format">Choose an email format: </label>
+							<label
+								><input
+									type="radio"
+									name="mail-format"
+									value="html"
+								/>HTML</label
+							>
+							<label
+								><input
+									type="radio"
+									name="mail-format"
+									value="text"
+								/>Text</label
+							>
+						</div>
+					</div>
 				</fieldset>
 
 				<!-- Submit button -->

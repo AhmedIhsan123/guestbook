@@ -3,6 +3,9 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333;
+	font-weight: 600;
 }
 
 body {
@@ -13,5 +16,93 @@ body {
 }
 
 main {
-	width: 60%;
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	padding: 1rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	height: 50%;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 1rem;
+	height: 100%;
+}
+
+legend {
+	text-align: center;
+	font-size: 30px;
+}
+
+input,
+select {
+	padding: 0.5rem 1rem;
+}
+
+input,
+select,
+textarea {
+	border: 1px solid gray;
+}
+
+textarea {
+	padding: 0.5rem;
+	resize: none;
+	height: 100%;
+	border-radius: 5px;
+}
+
+/* Basic information fieldset */
+#basic-info {
+	display: grid;
+	border: none;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.5rem;
+	overflow: auto;
+	width: 100%;
+	height: 50%;
+}
+#basic-info div {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Meeting information fieldset */
+#meeting-info {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-items: stretch;
+	border: none;
+	gap: 1rem;
+}
+#meeting-info div {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+/* Message box */
+#submit-info {
+	display: flex;
+	flex-direction: column;
+	border: none;
+	height: 100%;
+	padding-top: 1rem;
+}
+#submit-info div {
+	padding-top: 0.5rem;
+}
+
+/* Submit button */
+#submit-btn {
+	cursor: pointer;
+	border-radius: 3px;
+	border: none;
+	padding: 0.5rem 1rem;
+	background-color: rgb(15, 165, 15);
+	color: white;
 }
