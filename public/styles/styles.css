@@ -39,7 +39,7 @@ legend {
 
 input,
 select {
-	padding: 0.5rem 1rem;
+	padding: 0.5rem;
 }
 
 input,
@@ -95,6 +95,9 @@ textarea {
 }
 #submit-info div {
 	padding-top: 0.5rem;
+}
+.radio {
+	margin-right: 0.25rem;
 }
 
 /* Submit button */

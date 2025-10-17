@@ -6,10 +6,7 @@
 		<title>Guest Book</title>
 
 		<!-- Linking CSS -->
-		<link rel="stylesheet" href="styles.css" />
-
-		<!-- Script -->
-		<script src="script.js"></script>
+		<link rel="stylesheet" href="styles/styles.css" />
 	</head>
 	<body>
 		<main>
@@ -94,20 +91,24 @@
 
 						<!-- Email format -->
 						<div>
-							<label for="mail-format">Choose an email format: </label>
-							<label
+							<span>Choose an email format:</span>
+							<label for="html"
 								><input
 									type="radio"
 									name="mail-format"
 									value="html"
-								/>HTML</label
+									id="html"
+									class="radio"
+								/><span>HTML</span></label
 							>
-							<label
+							<label for="text"
 								><input
 									type="radio"
 									name="mail-format"
 									value="text"
-								/>Text</label
+									id="text"
+									class="radio"
+								/><span>Text</span></label
 							>
 						</div>
 					</div>
