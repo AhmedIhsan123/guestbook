@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Guest Book</title>
+
+		<!-- Linking CSS -->
+		<link rel="stylesheet" href="styles.css" />
+
+		<!-- Script -->
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<main>
+			<form action="/submit" method="POST">
+				<legend>Contact Form</legend>
+
+				<!-- Basic information fieldset -->
+				<fieldset id="basic-info">
+					<!-- First name -->
+					<label for="fname">First name</label>
+					<input type="text" id="fname" name="fname" required />
+
+					<!-- Last name -->
+					<label for="lname">Last name</label>
+					<input type="text" id="lname" name="lname" required />
+
+					<!-- Job Title -->
+					<label for="job-title">Job Title</label>
+					<input type="text" id="job-title" name="job-title" required />
+
+					<!-- Company -->
+					<label for="company">Company</label>
+					<input type="text" id="company" name="company" required />
+
+					<!-- Linkedin URL -->
+					<label for="linkedin">LinkedIn URL</label>
+					<input type="text" id="linkedin" name="linkedin" />
+
+					<!-- Email Address -->
+					<label for="email">Email Address</label>
+					<input type="email" id="email" name="email" required />
+				</fieldset>
+
+				<!-- Meeting info -->
+				<fieldset id="meeting-info">
+					<!-- Meet -->
+					<label for="meet">How did we meet?</label>
+					<select name="meet" id="meet">
+						<option value="">Please select</option>
+						<option value="online">Online</option>
+						<option value="in-person">In-Person</option>
+						<option value="other">Other</option>
+					</select>
+
+					<!-- Other -->
+					<label for="other">Other (please specify)</label>
+					<input type="text" id="other" />
+				</fieldset>
+
+				<!-- Last area -->
+				<fieldset id="submit-info">
+					<!-- Message box -->
+					<label for="message">Message</label>
+					<textarea
+						id="message"
+						name="message"
+						placeholder="Type your message here..."
+					></textarea>
+
+					<!-- Add to mailing -->
+					<input type="checkbox" id="mail-list" name="mail-list" />
+					<label for="mail-list">Please add me to your mailing list!</label>
+
+					<!-- Email format -->
+					<label for="mail-format">Choose an email format: </label>
+					<label
+						><input type="radio" name="mail-format" value="html" />HTML</label
+					>
+					<label
+						><input type="radio" name="mail-format" value="text" />Text</label
+					>
+				</fieldset>
+
+				<!-- Submit button -->
+				<button type="submit" id="submit-btn">Submit</button>
+			</form>
+		</main>
+	</body>
+</html>
