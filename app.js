@@ -5,10 +5,10 @@ import express from "express";
 const app = express();
 
 // Define the default port number
-const PORT = 3002;
+const PORT = 3003;
 
 // Use public
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 // Define a default "route" ('/')
 // req: contains information about the incoming request
