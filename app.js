@@ -5,7 +5,7 @@ import express from "express";
 const app = express();
 
 // Define the default port number
-const PORT = 3003;
+const PORT = 3002;
 
 // Use public
 app.use(express.static("public"));
