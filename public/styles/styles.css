@@ -17,11 +17,9 @@ body {
 
 main {
 	display: flex;
-	flex-direction: column;
 	border-radius: 5px;
 	padding: 1rem;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	height: 50%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 form {
@@ -108,4 +106,30 @@ textarea {
 	padding: 0.5rem 1rem;
 	background-color: rgb(15, 165, 15);
 	color: white;
+}
+
+@media (max-width: 650px) {
+	#basic-info {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 440px) {
+	body {
+		display: grid;
+		place-items: center;
+	}
+	main {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 1rem;
+		box-shadow: none;
+	}
+	#meeting-info {
+		flex-direction: column;
+	}
+	#basic-info {
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
