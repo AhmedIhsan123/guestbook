@@ -38,6 +38,11 @@ const formConfig = {
 			error: document.getElementById("err-meet"),
 			required: true,
 		},
+		format: {
+			ref: [document.getElementById("html"), document.getElementById("text")],
+			error: document.getElementById("err-format"),
+			required: false,
+		},
 	},
 };
 
@@ -127,6 +132,17 @@ formConfig.reference.onsubmit = () => {
 		}
 	}
 
+	// Validate email format
+	if (inputs.format.required) {
+		if (inputs.format.ref[0].checked || inputs.format.ref[1].checked) {
+			inputs.format.error.style.visibility = "hidden";
+		} else {
+			inputs.format.error.style.visibility = "visible";
+			isValid = false;
+		}
+	}
+
+	// Return if the form is valid
 	return isValid;
 };
 
@@ -147,14 +163,16 @@ formConfig.inputs.meet.ref.addEventListener("change", function () {
 document.getElementById("mail-list").addEventListener("change", function () {
 	// Case check for if checked
 	if (document.getElementById("mail-list").checked == true) {
-		// Enable required for email input
+		// Enable required for email input/radio
 		formConfig.inputs.email.required = true;
+		formConfig.inputs.format.required = true;
 
 		// Show the radio buttons
 		document.getElementById("email-format-box").style.display = "block";
 	} else {
-		// Disable required for email input
+		// Disable required for email input/radio
 		formConfig.inputs.email.required = false;
+		formConfig.inputs.format.required = false;
 
 		// Hide the radio buttons
 		document.getElementById("email-format-box").style.display = "none";
