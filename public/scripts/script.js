@@ -21,7 +21,7 @@ const formConfig = {
 		linkedin: {
 			ref: document.getElementById("linkedin"),
 			error: document.getElementById("err-linkedin"),
-			required: false,
+			required: true,
 		},
 		company: {
 			ref: document.getElementById("company"),
@@ -92,11 +92,17 @@ formConfig.reference.onsubmit = () => {
 
 	// Validate linked in
 	if (inputs.linkedin.required) {
-		if (inputs.linkedin.ref.value.trim() == "") {
-			inputs.linkedin.error.style.visibility = "visible";
-			isValid = false;
-		} else {
-			inputs.linkedin.error.style.visibility = "hidden";
+		if (inputs.linkedin.ref.value.trim() != "") {
+			const linkedinStr = "https://linkedin.com/in/";
+			let currInput = inputs.linkedin.ref.value;
+			for (let i = 0; i < linkedinStr.length; i++) {
+				if (currInput[i] != linkedinStr[i]) {
+					isValid = false;
+					inputs.linkedin.error.style.visibility = "visible";
+					break;
+				}
+				inputs.linkedin.error.style.visibility = "hidden";
+			}
 		}
 	}
 
