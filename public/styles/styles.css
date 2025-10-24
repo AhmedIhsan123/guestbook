@@ -6,6 +6,7 @@
 	font-family: Arial, Helvetica, sans-serif;
 	color: #333;
 	font-weight: 600;
+	user-select: none;
 }
 
 body {
@@ -53,6 +54,12 @@ textarea {
 	border-radius: 5px;
 }
 
+/* General Classes */
+.error {
+	visibility: hidden;
+	color: red;
+}
+
 /* Basic information fieldset */
 #basic-info {
 	display: grid;
@@ -63,7 +70,7 @@ textarea {
 	width: 100%;
 	height: 50%;
 }
-#basic-info div {
+#basic-info div div {
 	display: flex;
 	flex-direction: column;
 }
@@ -77,8 +84,13 @@ textarea {
 	border: none;
 	gap: 1rem;
 }
-#meeting-info div {
+#meet-box {
 	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+#other-box {
+	display: none;
 	flex-direction: column;
 	width: 100%;
 }
@@ -96,6 +108,11 @@ textarea {
 }
 .radio {
 	margin-right: 0.25rem;
+}
+
+/* Email format */
+#email-format-box {
+	display: none;
 }
 
 /* Submit button */
