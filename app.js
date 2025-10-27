@@ -1,33 +1,28 @@
-// Import the express module
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
 
-// Create an instance of the express application'
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
-
-// Define the default port number
 const PORT = 3002;
 
-// Array to store contacts
 const contacts = [];
 
-// Use public
+// Serve static files from "public"
 app.use(express.static("public"));
 
-// Url Encoding
+// Parse URL-encoded form data
 app.use(express.urlencoded({ extended: true }));
 
-// Define a default "route" ('/')
-// req: contains information about the incoming request
-// res: allows us to send back a response to the client
+// Home page
 app.get("/", (req, res) => {
-	res.sendFile(`${import.meta.dirname}/views/home.html`);
+	res.sendFile(path.join(__dirname, "views/home.html"));
 });
 
-// Define a confirmation "route" ('/confirmation')
-// req: contains information about the incoming request
-// res: allows us to send back a response to the client
+// Handle form submission
 app.post("/confirmation", (req, res) => {
-	// Make a person object
 	const person = {
 		fname: req.body.fname,
 		lname: req.body.lname,
@@ -42,18 +37,15 @@ app.post("/confirmation", (req, res) => {
 		text: req.body.text,
 	};
 
-	// Push the person into the contacts array
 	contacts.push(person);
-
-	// Show the confirmation page
-	res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+	res.sendFile(path.join(__dirname, "views/confirmation.html"));
 });
 
+// Admin page to view all submissions
 app.get("/admin", (req, res) => {
-	res.send(contacts);
+	res.json(contacts);
 });
 
-// Start the server and listen on the specified port
 app.listen(PORT, () => {
 	console.log(`Server is running at http://localhost:${PORT}`);
 });
