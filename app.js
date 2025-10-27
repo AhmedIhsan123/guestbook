@@ -23,6 +23,9 @@ app.get("/", (req, res) => {
 	res.sendFile(`${import.meta.dirname}/views/home.html`);
 });
 
+// Define a confirmation "route" ('/confirmation')
+// req: contains information about the incoming request
+// res: allows us to send back a response to the client
 app.post("/confirmation", (req, res) => {
 	// Make a person object
 	const person = {
